@@ -1,5 +1,6 @@
 package com.kv.subservice.controller;
 
+import com.kv.commonuse.bean.ResponseData;
 import com.kv.remoteclientapi.HouseRemoteClient;
 import com.kv.remoteclientapi.dto.HouseListDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class SubController {
     HouseRemoteClient houseRemoteClient;
 
     @GetMapping("/list/{eid}/{uid}")
-    public HouseListDto hosueList(@PathVariable("eid")Long eid, @PathVariable("uid")String uid){
+    public ResponseData hosueList(@PathVariable("eid")Long eid, @PathVariable("uid")String uid){
         return houseRemoteClient.hosueList(eid,uid);
     }
 }
